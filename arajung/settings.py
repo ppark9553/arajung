@@ -6,7 +6,7 @@ SECRET_KEY = '@8m8*$3q1t%oly1oz#@io!&*googu7wgroyp&h4!tx&@)*!il5'
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', '127.0.1.1']
+ALLOWED_HOSTS = ['arajung.com', 'www.arajung.com', '108.160.128.83', '127.0.0.1', '127.0.1.1']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -57,16 +57,16 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'arajung.wsgi.application'
 
-DB_IN_USE = ''
+DB_IN_USE = 'postgres'
 
 if DB_IN_USE == 'postgres':
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'NAME': 'woobak',
-            'USER': 'woobak',
-            'PASSWORD': 'makeitpopweWOOBAK!1',
-            'HOST': '45.32.9.85',
+            'NAME': 'arajung',
+            'USER': 'arajung',
+            'PASSWORD': 'makeitpopweAR!1',
+            'HOST': '108.160.128.83',
             'PORT': '',
         }
     }
