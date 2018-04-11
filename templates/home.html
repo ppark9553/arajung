@@ -1,0 +1,464 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <link rel="icon" href="{% static 'favicon.ico' %}">
+    <title>아라정</title>
+    <!-- Semantic UI CSS -->
+    <link rel="stylesheet" href="{% static 'vendor/semantic-ui/semantic.min.css' %}">
+    <!-- Font Awesome CSS  -->
+    <link rel="stylesheet" href="{% static 'vendor/font-awesome-4.7.0/css/font-awesome.min.css' %}">
+    <!-- Custom CSS -->
+    <!-- <link rel="stylesheet" href="{% static 'css/semantic_test.css' %}"> -->
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <link rel="stylesheet" href="{% static 'css/balloon.css' %}">
+  </head>
+
+    <body>
+
+      <!-- Modal Definition -->
+      <div id="modal-section" class="ui basic modal"></div>
+
+      <div class="ui left fixed vertical menu">
+        <div class="item">
+          <img class="ui medium image" src="{% static 'img/arajung.png' %}">
+        </div>
+        <a class="item">회사소개</a>
+        <a class="item">후보자 1</a>
+        <a class="item">후보자 2</a>
+        <a class="item">팀소개</a>
+      </div>
+
+      <div class="ara_main_1 image-bg">
+
+        {% if user.is_authenticated %}
+        <div class="ui grid">
+          <div class="ara_action right floated three wide column">
+            <img class="ui avatar image" src="{% static 'img/avatar1.jpg' %}">
+            <span style="margin-right: 3%;">{{ user.username }}</span>
+            <button id="logout-btn" class="ui positive mini button">로그아웃</button>
+          </div>
+        </div>
+        {% else %}
+        <div class="ui grid">
+          <div class="ara_action right floated three wide column">
+            <div class="ui medium buttons">
+              <button id="register-btn" class="ui positive button">회원가입</button>
+              <div class="or"></div>
+              <button id="login-btn" class="ui positive button">로그인</button>
+            </div>
+          </div>
+        </div>
+        {% endif %}
+
+        <div class="ui grid">
+
+          <div class="row">
+            <h2 class="ui center aligned icon header" style="color: white;">
+              <i class="main white alarm outline icon"></i> 내가 사는 동네의 안건을 말해주세요!
+            </h2>
+          </div>
+
+          <div class="row opaque-section">
+            <div class="three wide column"></div>
+            <div class="ten wide column">
+              <div class="ui raised segment">
+                <div class="ui form">
+                  <div class="field">
+                    <label>제목</label>
+                    <textarea rows="1"></textarea>
+                  </div>
+                  <div class="field">
+                    <label>내용 (제목만 써도 작성 됩니다)</label>
+                    <textarea></textarea>
+                  </div>
+                </div>
+                <button class="fluid ui red button" style="margin-top: 1rem;">작성하기</button>
+              </div>
+            </div>
+            <div class="three wide column"></div>
+          </div>
+
+        </div>
+
+        <br><br><br>
+
+      </div>
+
+      <div class="ara_main_2">
+
+        <div class="ui grid">
+
+          <h4 class="ui horizontal divider header">
+            <i class="handshake outline icon"></i>
+            공약을 확인하세요
+          </h4>
+
+          <div class="row">
+            <div class="ui styled fluid accordion">
+
+              <div class="active title">
+                <i class="dropdown icon"></i>
+                1. 광장동 앞 불법 주차 해결해주세요
+              </div>
+              <div class="content">
+                <div class="ui grid">
+                  <div class="left floated three wide column">
+                    <div class="ui massive heart rating" data-rating="1" data-max-rating="5"></div>
+                  </div>
+                  <div class="right floated two wide column">
+                    <button class="ui secondary basic button">작성자</button>
+                  </div>
+                </div>
+                <div class="ui floating message">
+                  <p>공약 세부 내용</p>
+                </div>
+                <div class="ui segment">
+                  <img class="ui small left floated image" src="/images/wireframe/text-image.png">
+                  <p>후보자 답변. 동영상이나 사진으로 답변함.</p>
+                </div>
+                <h4 class="ui horizontal divider header">
+                  유사 공약 목록
+                </h4>
+                <div class="ui divided items">
+                  <div class="item">
+                    <div class="image">
+                      <img src="/images/wireframe/image.png">
+                    </div>
+                    <div class="content">
+                      <a class="header">공약 1</a>
+                      <div class="meta">
+                        <span class="cinema">후보자 이름</span>
+                      </div>
+                      <div class="description">
+                        <p></p>
+                      </div>
+                      <div class="extra">
+                        <div class="ui right floated primary button">
+                          자세히 보기
+                          <i class="right chevron icon"></i>
+                        </div>
+                        <div class="ui label">태그 1</div>
+                        <div class="ui label">태그 2</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="item">
+                    <div class="image">
+                      <img src="/images/wireframe/image.png">
+                    </div>
+                    <div class="content">
+                      <a class="header">공약 2</a>
+                      <div class="meta">
+                        <span class="cinema">후보자 이름</span>
+                      </div>
+                      <div class="description">
+                        <p></p>
+                      </div>
+                      <div class="extra">
+                        <div class="ui right floated primary button">
+                          자세히 보기
+                          <i class="right chevron icon"></i>
+                        </div>
+                        <div class="ui label">태그 1</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="item">
+                    <div class="image">
+                      <img src="/images/wireframe/image.png">
+                    </div>
+                    <div class="content">
+                      <a class="header">공약 3</a>
+                      <div class="meta">
+                        <span class="cinema">후보자 이름</span>
+                      </div>
+                      <div class="description">
+                        <p></p>
+                      </div>
+                      <div class="extra">
+                        <div class="ui right floated primary button">
+                          자세히 보기
+                          <i class="right chevron icon"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="title">
+                <i class="dropdown icon"></i>
+                2. 어떤 공약
+              </div>
+              <div class="content">
+                <p>There are many breeds of dogs. Each breed varies in size and temperament. Owners often select a breed of dog that they find to be compatible with their own lifestyle and desires from a companion.</p>
+              </div>
+
+              <div class="title">
+                <i class="dropdown icon"></i>
+                3. 어떤 공약
+              </div>
+              <div class="content">
+                <p>Three common ways for a prospective owner to acquire a dog is from pet shops, private owners, or shelters.</p>
+                <p>A pet shop may be the most convenient way to buy a dog. Buying a dog from a private owner allows you to assess the pedigree and upbringing of your dog before choosing to take it home. Lastly, finding your dog from a shelter, helps give a good home to a dog who may not find one so readily.</p>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <h4 class="ui horizontal divider header" style="margin-top: 4rem; margin-bottom: 3rem;">
+          <i class="bullhorn icon"></i>
+          제안된 공약
+        </h4>
+
+        <div class="ui grid">
+          <div class="eight wide column">
+            <div class="ui comments">
+              <div class="comment">
+                <a class="avatar">
+                  <img src="{% static 'img/avatar1.jpg' %}">
+                </a>
+                <div class="content">
+                  <a class="author">Stevie Feliciano</a>
+                  <div class="metadata">
+                    <div class="date">2 days ago</div>
+                    <div class="rating">
+                      <i class="star icon"></i>
+                      5 Faves
+                    </div>
+                  </div>
+                  <div class="text">
+                    Hey guys, I hope this example comment is helping you read this documentation.
+                  </div>
+                  <div class="actions">
+                    <a class="reply">Reply</a>
+                    <a class="save">Save</a>
+                    <a class="hide">Hide</a>
+                    <a>
+                      <i class="expand icon"></i>
+                      Full-screen
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="comment">
+                <a class="avatar">
+                  <img src="{% static 'img/avatar2.jpg' %}">
+                </a>
+                <div class="content">
+                  <a class="author">Stevie Feliciano</a>
+                  <div class="metadata">
+                    <div class="date">2 days ago</div>
+                    <div class="rating">
+                      <i class="star icon"></i>
+                      5 Faves
+                    </div>
+                  </div>
+                  <div class="text">
+                    Hey guys, I hope this example comment is helping you read this documentation.
+                  </div>
+                  <div class="actions">
+                    <a class="reply">Reply</a>
+                    <a class="save">Save</a>
+                    <a class="hide">Hide</a>
+                    <a>
+                      <i class="expand icon"></i>
+                      Full-screen
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="comment">
+                <a class="avatar">
+                  <img src="{% static 'img/avatar3.jpg' %}">
+                </a>
+                <div class="content">
+                  <a class="author">Stevie Feliciano</a>
+                  <div class="metadata">
+                    <div class="date">2 days ago</div>
+                    <div class="rating">
+                      <i class="star icon"></i>
+                      5 Faves
+                    </div>
+                  </div>
+                  <div class="text">
+                    Hey guys, I hope this example comment is helping you read this documentation.
+                  </div>
+                  <div class="actions">
+                    <a class="reply">Reply</a>
+                    <a class="save">Save</a>
+                    <a class="hide">Hide</a>
+                    <a>
+                      <i class="expand icon"></i>
+                      Full-screen
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="comment">
+                <a class="avatar">
+                  <img src="{% static 'img/avatar4.jpg' %}">
+                </a>
+                <div class="content">
+                  <a class="author">Stevie Feliciano</a>
+                  <div class="metadata">
+                    <div class="date">2 days ago</div>
+                    <div class="rating">
+                      <i class="star icon"></i>
+                      5 Faves
+                    </div>
+                  </div>
+                  <div class="text">
+                    Hey guys, I hope this example comment is helping you read this documentation.
+                  </div>
+                  <div class="actions">
+                    <a class="reply">Reply</a>
+                    <a class="save">Save</a>
+                    <a class="hide">Hide</a>
+                    <a>
+                      <i class="expand icon"></i>
+                      Full-screen
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="eight wide column">
+            <div class="ui comments">
+              <div class="comment">
+                <a class="avatar">
+                  <img src="{% static 'img/avatar1.jpg' %}">
+                </a>
+                <div class="content">
+                  <a class="author">Stevie Feliciano</a>
+                  <div class="metadata">
+                    <div class="date">2 days ago</div>
+                    <div class="rating">
+                      <i class="star icon"></i>
+                      5 Faves
+                    </div>
+                  </div>
+                  <div class="text">
+                    Hey guys, I hope this example comment is helping you read this documentation.
+                  </div>
+                  <div class="actions">
+                    <a class="reply">Reply</a>
+                    <a class="save">Save</a>
+                    <a class="hide">Hide</a>
+                    <a>
+                      <i class="expand icon"></i>
+                      Full-screen
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="comment">
+                <a class="avatar">
+                  <img src="{% static 'img/avatar2.jpg' %}">
+                </a>
+                <div class="content">
+                  <a class="author">Stevie Feliciano</a>
+                  <div class="metadata">
+                    <div class="date">2 days ago</div>
+                    <div class="rating">
+                      <i class="star icon"></i>
+                      5 Faves
+                    </div>
+                  </div>
+                  <div class="text">
+                    Hey guys, I hope this example comment is helping you read this documentation.
+                  </div>
+                  <div class="actions">
+                    <a class="reply">Reply</a>
+                    <a class="save">Save</a>
+                    <a class="hide">Hide</a>
+                    <a>
+                      <i class="expand icon"></i>
+                      Full-screen
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="comment">
+                <a class="avatar">
+                  <img src="{% static 'img/avatar3.jpg' %}">
+                </a>
+                <div class="content">
+                  <a class="author">Stevie Feliciano</a>
+                  <div class="metadata">
+                    <div class="date">2 days ago</div>
+                    <div class="rating">
+                      <i class="star icon"></i>
+                      5 Faves
+                    </div>
+                  </div>
+                  <div class="text">
+                    Hey guys, I hope this example comment is helping you read this documentation.
+                  </div>
+                  <div class="actions">
+                    <a class="reply">Reply</a>
+                    <a class="save">Save</a>
+                    <a class="hide">Hide</a>
+                    <a>
+                      <i class="expand icon"></i>
+                      Full-screen
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="comment">
+                <a class="avatar">
+                  <img src="{% static 'img/avatar4.jpg' %}">
+                </a>
+                <div class="content">
+                  <a class="author">Stevie Feliciano</a>
+                  <div class="metadata">
+                    <div class="date">2 days ago</div>
+                    <div class="rating">
+                      <i class="star icon"></i>
+                      5 Faves
+                    </div>
+                  </div>
+                  <div class="text">
+                    Hey guys, I hope this example comment is helping you read this documentation.
+                  </div>
+                  <div class="actions">
+                    <a class="reply">Reply</a>
+                    <a class="save">Save</a>
+                    <a class="hide">Hide</a>
+                    <a>
+                      <i class="expand icon"></i>
+                      Full-screen
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+      <!-- jQuery + Semantic UI JS -->
+      <script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
+      <script type="text/javascript" src="{% static 'vendor/semantic-ui/semantic.min.js' %}"></script>
+      <script type="text/javascript" src="{% static 'js/arajung.js' %}"></script>
+      <script type="text/javascript">
+      $('.ui.accordion').accordion();
+      $('.ui.rating').rating();
+      </script>
+
+    </body>
+  </html>
