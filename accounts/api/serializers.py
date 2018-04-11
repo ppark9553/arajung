@@ -74,6 +74,7 @@ class ProfileSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Profile
         fields = ('user',
+                  'is_candidate',
                   'name',
                   'phone',
                   'address',
