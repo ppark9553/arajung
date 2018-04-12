@@ -1,0 +1,19 @@
+{
+  "name": "arajung",
+  "version": "1.0.0",
+  "description": "political arena (SNS)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "git+https://github.com/ppark9553/arajung.git",
+  "author": "Phillip Park",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ppark9553/arajung/issues"
+  },
+  "homepage": "https://github.com/ppark9553/arajung#readme",
+  "devDependencies": {
+    "yarn": "^1.5.1"
+  }
+}
