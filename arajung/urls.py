@@ -11,9 +11,9 @@ from .views import (
 
 urlpatterns = [
     url(r'^$', HomeView.as_view(), name='home'),
-    url(r'^admin/', admin.site.urls),
     url(r'^login/$', login_view, name='login'),
     url(r'^logout/$', logout_view, name='logout'),
+    url(r'^admin/', admin.site.urls),
 
     url(r'^user-api/', include('accounts.api.urls', namespace='user-api')),
     url(r'^api/auth/', include('rest_framework.urls', namespace='rest_framework')),
