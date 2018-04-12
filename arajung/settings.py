@@ -57,7 +57,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'arajung.wsgi.application'
 
-DB_IN_USE = ''
+DB_IN_USE = 'postgres'
 
 if DB_IN_USE == 'postgres':
     DATABASES = {
