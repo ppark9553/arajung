@@ -1,10 +1,36 @@
 @import url("https://cdn.rawgit.com/theeluwin/NotoSansKR-Hestia/master/stylesheets/NotoSansKR-Hestia.css");
 
-.ara_main {
+.ara_main_1 {
+  margin-left: 15rem;
+  margin-right: 0rem;
+}
+
+.image-bg {
+  background: url('/static/img/bg.png') !important;
+  background-size: cover !important;
+  -webkit-filter: grayscale(25%) !important; /* Safari 6.0 - 9.0 */
+  filter: grayscale(25%) !important;
+  -webkit-filter: blur(30%) !important;
+  -moz-filter: blur(30%) !important;
+  -o-filter: blur(30%) !important;
+  -ms-filter: blur(30%) !important;
+  filter: blur(30%) !important;
+}
+
+.opaque-section {
+  opacity: 0.95;
+}
+
+.ara_main_2 {
+  margin-top: 4rem;
   margin-left: 18rem;
   margin-right: 3rem;
 }
 
 .ara_action {
-  margin-top: 1rem;
+  margin-top: 2.5rem;
+}
+
+.main.alarm.outline.icon {
+  margin-bottom: 1.5rem;
 }
